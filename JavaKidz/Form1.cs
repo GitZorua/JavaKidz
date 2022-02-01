@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Net;
 using System.IO;
 using System.Threading;
+using static System.Environment;
 
 namespace JavaKidz
 {
@@ -20,6 +21,7 @@ namespace JavaKidz
             InitializeComponent();
 
         }
+        string mcFolder = Environment.GetEnvironmentVariable("USERPROFILE") + @"\" + @"AppData\Roaming\.minecraft";
         private void button1_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Starting new thread...");
@@ -32,6 +34,8 @@ namespace JavaKidz
 
         private void downloadManager()
         {
+            string modsFolder = mcFolder + @"\" + "mods";
+            string resourceFolder = mcFolder + @"\" + "resourcepacks";
             //Get updated links
             Console.WriteLine("Grabbing updated download links...");
             string optifineLink = "";
@@ -95,8 +99,7 @@ namespace JavaKidz
             }
             catch { Console.WriteLine("Cannot grab download link for FabricAPI, please contact the JKInstaller developer..."); }
 
-            string modsFolder = Environment.GetEnvironmentVariable("USERPROFILE") + @"\" + @"AppData\Roaming\.minecraft\mods";
-            string resourceFolder = Environment.GetEnvironmentVariable("USERPROFILE") + @"\" + @"AppData\Roaming\.minecraft\resourcepacks";
+
             //OptiFine
             using (WebClient wc = new WebClient())
             {
@@ -216,6 +219,8 @@ namespace JavaKidz
             Console.SetOut(output);
             Console.SetError(output);
             Console.WriteLine("> > Welcome to the JavaKidz Installer! < <");
+            dirBox.Text = mcFolder;
+
         }
 
         private void outputBox_TextChanged(object sender, EventArgs e)
@@ -275,6 +280,17 @@ namespace JavaKidz
 
         private void outputBox_TextChanged_1(object sender, EventArgs e)
         {
+        }
+
+        private void dirButton_Click(object sender, EventArgs e)
+        {
+            folderBrowser.SelectedPath = mcFolder;
+            DialogResult res = folderBrowser.ShowDialog();
+            if (res == DialogResult.OK)
+            {
+                Console.WriteLine("+ Selected new directory.");
+                dirBox.Text = folderBrowser.SelectedPath;
+            }
         }
     }
 }

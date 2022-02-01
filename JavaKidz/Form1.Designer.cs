@@ -30,37 +30,39 @@ namespace JavaKidz
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JavaKidz));
             this.installButton = new System.Windows.Forms.Button();
-            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.dOptions_fabricAPI = new System.Windows.Forms.CheckBox();
             this.loaderButton = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bgTooltip = new System.Windows.Forms.ToolTip(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.outputBox = new System.Windows.Forms.RichTextBox();
+            this.comingSoon = new System.Windows.Forms.ToolTip(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.dirBox = new System.Windows.Forms.TextBox();
+            this.dirLabel = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dirButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.folderBrowser = new System.Windows.Forms.FolderBrowserDialog();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // installButton
             // 
-            this.installButton.Location = new System.Drawing.Point(449, 12);
+            this.installButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.installButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.installButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.installButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.installButton.Location = new System.Drawing.Point(3, 7);
             this.installButton.Name = "installButton";
             this.installButton.Size = new System.Drawing.Size(198, 41);
             this.installButton.TabIndex = 0;
             this.installButton.Text = "Start Installing";
             this.installButton.UseVisualStyleBackColor = true;
             this.installButton.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // progressBar
-            // 
-            this.progressBar.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.progressBar.Location = new System.Drawing.Point(8, 95);
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(639, 14);
-            this.progressBar.TabIndex = 1;
             // 
             // label1
             // 
@@ -87,67 +89,137 @@ namespace JavaKidz
             // loaderButton
             // 
             this.loaderButton.AutoSize = true;
+            this.loaderButton.Enabled = false;
+            this.loaderButton.ForeColor = System.Drawing.Color.Maroon;
             this.loaderButton.Location = new System.Drawing.Point(7, 76);
             this.loaderButton.Name = "loaderButton";
             this.loaderButton.Size = new System.Drawing.Size(91, 17);
             this.loaderButton.TabIndex = 5;
             this.loaderButton.Text = "Fabric Loader";
+            this.comingSoon.SetToolTip(this.loaderButton, "The installer currently doesn\'t support this, sorry!");
             this.loaderButton.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.loaderButton);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dOptions_fabricAPI);
-            this.panel1.Location = new System.Drawing.Point(8, 202);
+            this.panel1.Location = new System.Drawing.Point(3, 195);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(639, 96);
+            this.panel1.Size = new System.Drawing.Size(537, 110);
             this.panel1.TabIndex = 7;
             // 
             // bgTooltip
             // 
             this.bgTooltip.ToolTipTitle = "Credit";
             // 
+            // outputBox
+            // 
+            this.outputBox.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.outputBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.outputBox.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.outputBox.Location = new System.Drawing.Point(3, 54);
+            this.outputBox.Name = "outputBox";
+            this.outputBox.ReadOnly = true;
+            this.outputBox.Size = new System.Drawing.Size(537, 177);
+            this.outputBox.TabIndex = 9;
+            this.outputBox.Text = "";
+            this.outputBox.TextChanged += new System.EventHandler(this.outputBox_TextChanged);
+            // 
+            // comingSoon
+            // 
+            this.comingSoon.ToolTipTitle = "Coming Soon!";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label2.Location = new System.Drawing.Point(22, 76);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Fabric Loader";
+            this.comingSoon.SetToolTip(this.label2, "Sorry, we\'re still working on this feature.");
+            // 
+            // dirBox
+            // 
+            this.dirBox.Location = new System.Drawing.Point(210, 28);
+            this.dirBox.Name = "dirBox";
+            this.dirBox.ReadOnly = true;
+            this.dirBox.Size = new System.Drawing.Size(283, 20);
+            this.dirBox.TabIndex = 10;
+            // 
+            // dirLabel
+            // 
+            this.dirLabel.AutoSize = true;
+            this.dirLabel.Location = new System.Drawing.Point(207, 12);
+            this.dirLabel.Name = "dirLabel";
+            this.dirLabel.Size = new System.Drawing.Size(157, 13);
+            this.dirLabel.TabIndex = 11;
+            this.dirLabel.Text = "Target .minecraft directory path:";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.outputBox);
+            this.panel2.Controls.Add(this.panel1);
+            this.panel2.Controls.Add(this.dirLabel);
+            this.panel2.Controls.Add(this.dirButton);
+            this.panel2.Controls.Add(this.dirBox);
+            this.panel2.Controls.Add(this.installButton);
+            this.panel2.Location = new System.Drawing.Point(142, 24);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(570, 322);
+            this.panel2.TabIndex = 12;
+            // 
+            // dirButton
+            // 
+            this.dirButton.BackColor = System.Drawing.Color.Transparent;
+            this.dirButton.FlatAppearance.BorderSize = 0;
+            this.dirButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dirButton.Image = global::JavaKidz.Properties.Resources.folder_mojang_25741;
+            this.dirButton.Location = new System.Drawing.Point(493, 20);
+            this.dirButton.Name = "dirButton";
+            this.dirButton.Size = new System.Drawing.Size(44, 35);
+            this.dirButton.TabIndex = 0;
+            this.dirButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.dirButton.UseVisualStyleBackColor = false;
+            this.dirButton.Click += new System.EventHandler(this.dirButton_Click);
+            // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-7, -43);
+            this.pictureBox1.Image = global::JavaKidz.Properties.Resources.Minecraft;
+            this.pictureBox1.Location = new System.Drawing.Point(-10, -139);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(674, 360);
+            this.pictureBox1.Size = new System.Drawing.Size(761, 485);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             this.bgTooltip.SetToolTip(this.pictureBox1, " Animated Background by Артём Саркисян");
             // 
-            // outputBox
+            // folderBrowser
             // 
-            this.outputBox.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.outputBox.ForeColor = System.Drawing.Color.Lime;
-            this.outputBox.Location = new System.Drawing.Point(8, 115);
-            this.outputBox.Name = "outputBox";
-            this.outputBox.ReadOnly = true;
-            this.outputBox.Size = new System.Drawing.Size(639, 121);
-            this.outputBox.TabIndex = 9;
-            this.outputBox.Text = "";
-            this.outputBox.TextChanged += new System.EventHandler(this.outputBox_TextChanged);
+            this.folderBrowser.RootFolder = System.Environment.SpecialFolder.UserProfile;
+            this.folderBrowser.ShowNewFolderButton = false;
             // 
             // JavaKidz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(659, 310);
-            this.Controls.Add(this.outputBox);
-            this.Controls.Add(this.progressBar);
-            this.Controls.Add(this.installButton);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(747, 341);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "JavaKidz";
             this.ShowIcon = false;
             this.Text = "JavaKidz";
             this.Load += new System.EventHandler(this.JavaKidz_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -156,7 +228,6 @@ namespace JavaKidz
         #endregion
 
         private System.Windows.Forms.Button installButton;
-        private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox dOptions_fabricAPI;
         private System.Windows.Forms.CheckBox loaderButton;
@@ -164,6 +235,13 @@ namespace JavaKidz
         private System.Windows.Forms.ToolTip bgTooltip;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.RichTextBox outputBox;
+        private System.Windows.Forms.ToolTip comingSoon;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox dirBox;
+        private System.Windows.Forms.Label dirLabel;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button dirButton;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowser;
     }
 }
 
