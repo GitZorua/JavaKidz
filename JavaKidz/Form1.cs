@@ -90,7 +90,7 @@ namespace JavaKidz
                 WebResponse response = request.GetResponse();
                 Stream dataStream = response.GetResponseStream();
                 StreamReader reader = new StreamReader(dataStream);
-                optifabricLink = reader.ReadToEnd();
+                fabricAPILink = reader.ReadToEnd();
                 Console.WriteLine("- Got up-to-date link for Fabric API.");
             }
             catch { Console.WriteLine("Cannot grab download link for FabricAPI, please contact the JKInstaller developer..."); }
@@ -102,16 +102,25 @@ namespace JavaKidz
             {
                 //wc.DownloadProgressChanged += ProgressChanged;
                 Console.WriteLine("Downloading OptiFine...");
-                try
+                //try
+                //{
+                //    wc.DownloadFile( //OptiFine Download
+                //        // Param1 = Link of file
+                //        new System.Uri(optifineLink),
+                //        // Param2 = Path to save
+                //        modsFolder + @"\OptiFine 1.17.1 HD U H1.jar"
+                //   ); Console.WriteLine("Completed installation of OptiFine...");
+                //}
+                //catch { Console.WriteLine("> Could not install OptiFine..."); }
+                DialogResult res = MessageBox.Show("OptiFine requires that you personally download the file from their site. Robots aren't allowed there... :,(", "Manual Installation Required", MessageBoxButtons.OKCancel);
+                if (res == DialogResult.OK)
                 {
-                    wc.DownloadFile( //OptiFine Download
-                                     // Param1 = Link of file
-                        new System.Uri(optifineLink),
-                        // Param2 = Path to save
-                        modsFolder + @"\OptiFine 1.17.1 HD U H1.jar"
-                    ); Console.WriteLine("Completed installation of OptiFine...");
+                    System.Diagnostics.Process.Start(optifineLink);
+                    Console.WriteLine("Completed installation of OptiFine...");
+                } else
+                {
+                    Console.WriteLine("> Resuming without OptiFine");
                 }
-                catch { Console.WriteLine("> Could not install OptiFine..."); }
             }
             //JKPortal
             using (WebClient wc = new WebClient())
@@ -173,7 +182,6 @@ namespace JavaKidz
                 catch { Console.WriteLine("> Could not install resource pack..."); }
 
             }
-            Console.WriteLine("Completed installations!");
 
             //FabricAPI
             if (dOptions_fabricAPI.Checked)
@@ -204,7 +212,9 @@ namespace JavaKidz
 
         private void JavaKidz_Load(object sender, EventArgs e)
         {
-            Console.SetOut(new RichTextBoxWriter(outputBox));
+            RichTextBoxWriter output = new RichTextBoxWriter(outputBox);
+            Console.SetOut(output);
+            Console.SetError(output);
             Console.WriteLine("> > Welcome to the JavaKidz Installer! < <");
         }
 
