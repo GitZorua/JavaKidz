@@ -79,5 +79,13 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="DLinks\fabricAPI.txt" />
+    <Content Include="DLinks\fabricLoader.txt" />
+    <Content Include="DLinks\optifabric.txt" />
+    <Content Include="DLinks\optifine.txt" />
+    <Content Include="DLinks\pack.txt" />
+    <Content Include="DLinks\portal.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
