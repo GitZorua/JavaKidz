@@ -28,7 +28,7 @@ namespace JavaKidz
             try
             {
 
-                WebRequest request = WebRequest.Create("https://raw.githubusercontent.com/RoNubThe3rd/JKInstaller/master/DownloadLinks/optifine.txt");
+                WebRequest request = WebRequest.Create("https://raw.githubusercontent.com/RoNubThe3rd/JavaKidz/master/JavaKidz/DLinks/optifine.txt");
                 WebResponse response = request.GetResponse();
                 Stream dataStream = response.GetResponseStream();
                 StreamReader reader = new StreamReader(dataStream);
@@ -38,7 +38,7 @@ namespace JavaKidz
             try
             {
 
-                WebRequest request = WebRequest.Create("https://raw.githubusercontent.com/RoNubThe3rd/JKInstaller/master/DownloadLinks/optifine.txt");
+                WebRequest request = WebRequest.Create("https://raw.githubusercontent.com/RoNubThe3rd/JavaKidz/master/JavaKidz/DLinks/portal.txt");
                 WebResponse response = request.GetResponse();
                 Stream dataStream = response.GetResponseStream();
                 StreamReader reader = new StreamReader(dataStream);
@@ -125,6 +125,11 @@ namespace JavaKidz
         private void ProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             progressBar.Value = e.ProgressPercentage;
+        }
+
+        private void JavaKidz_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
