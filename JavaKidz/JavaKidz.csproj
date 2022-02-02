@@ -87,6 +87,7 @@
     <Content Include="DLinks\optifine.txt" />
     <Content Include="DLinks\pack.txt" />
     <Content Include="DLinks\portal.txt" />
+    <None Include="Resources\animated_background.gif" />
     <None Include="Resources\Minecraft.gif" />
     <None Include="Resources\folder_mojang_25741.png" />
   </ItemGroup>

@@ -63,6 +63,16 @@ namespace JavaKidz.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap animated_background {
+            get {
+                object obj = ResourceManager.GetObject("animated_background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap folder_mojang_25741 {
             get {
                 object obj = ResourceManager.GetObject("folder_mojang_25741", resourceCulture);
