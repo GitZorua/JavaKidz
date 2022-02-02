@@ -37,7 +37,6 @@ namespace JavaKidz
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.bgTooltip = new System.Windows.Forms.ToolTip(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.outputBox = new System.Windows.Forms.RichTextBox();
             this.comingSoon = new System.Windows.Forms.ToolTip(this.components);
             this.dirBox = new System.Windows.Forms.TextBox();
@@ -45,9 +44,10 @@ namespace JavaKidz
             this.panel2 = new System.Windows.Forms.Panel();
             this.dirButton = new System.Windows.Forms.Button();
             this.folderBrowser = new System.Windows.Forms.FolderBrowserDialog();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // installButton
@@ -56,6 +56,8 @@ namespace JavaKidz
             this.installButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.installButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.installButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.installButton.Font = new System.Drawing.Font("Minecraft", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.installButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.installButton.Location = new System.Drawing.Point(3, 7);
             this.installButton.Name = "installButton";
             this.installButton.Size = new System.Drawing.Size(198, 41);
@@ -68,6 +70,7 @@ namespace JavaKidz
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label1.Location = new System.Drawing.Point(4, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 13);
@@ -79,6 +82,7 @@ namespace JavaKidz
             this.dOptions_fabricAPI.AutoSize = true;
             this.dOptions_fabricAPI.Checked = true;
             this.dOptions_fabricAPI.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.dOptions_fabricAPI.ForeColor = System.Drawing.SystemColors.Desktop;
             this.dOptions_fabricAPI.Location = new System.Drawing.Point(7, 53);
             this.dOptions_fabricAPI.Name = "dOptions_fabricAPI";
             this.dOptions_fabricAPI.Size = new System.Drawing.Size(75, 17);
@@ -101,6 +105,7 @@ namespace JavaKidz
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.OliveDrab;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.loaderButton);
@@ -114,7 +119,7 @@ namespace JavaKidz
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label2.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.label2.Location = new System.Drawing.Point(22, 76);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 13);
@@ -126,22 +131,11 @@ namespace JavaKidz
             // 
             this.bgTooltip.ToolTipTitle = "Credit";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::JavaKidz.Properties.Resources.animated_background;
-            this.pictureBox1.Location = new System.Drawing.Point(0, -25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(746, 393);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            this.bgTooltip.SetToolTip(this.pictureBox1, " Animated Background by Артём Саркисян");
-            // 
             // outputBox
             // 
             this.outputBox.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.outputBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.outputBox.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.outputBox.Font = new System.Drawing.Font("Minecraft", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.outputBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.outputBox.Location = new System.Drawing.Point(3, 54);
             this.outputBox.Name = "outputBox";
             this.outputBox.ReadOnly = true;
@@ -165,6 +159,7 @@ namespace JavaKidz
             // dirLabel
             // 
             this.dirLabel.AutoSize = true;
+            this.dirLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.dirLabel.Location = new System.Drawing.Point(207, 12);
             this.dirLabel.Name = "dirLabel";
             this.dirLabel.Size = new System.Drawing.Size(157, 13);
@@ -173,15 +168,16 @@ namespace JavaKidz
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.panel2.Controls.Add(this.outputBox);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.dirLabel);
             this.panel2.Controls.Add(this.dirButton);
             this.panel2.Controls.Add(this.dirBox);
             this.panel2.Controls.Add(this.installButton);
-            this.panel2.Location = new System.Drawing.Point(142, 24);
+            this.panel2.Location = new System.Drawing.Point(154, 74);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(570, 322);
+            this.panel2.Size = new System.Drawing.Size(543, 344);
             this.panel2.TabIndex = 12;
             // 
             // dirButton
@@ -203,12 +199,23 @@ namespace JavaKidz
             this.folderBrowser.RootFolder = System.Environment.SpecialFolder.UserProfile;
             this.folderBrowser.ShowNewFolderButton = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::JavaKidz.Properties.Resources.mcbg;
+            this.pictureBox1.Location = new System.Drawing.Point(-7, -29);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(765, 447);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            this.bgTooltip.SetToolTip(this.pictureBox1, "Animated background by affengamer100");
+            // 
             // JavaKidz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(747, 341);
+            this.ClientSize = new System.Drawing.Size(747, 405);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -218,9 +225,9 @@ namespace JavaKidz
             this.Load += new System.EventHandler(this.JavaKidz_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
