@@ -46,7 +46,7 @@ namespace JavaKidz
             try
             {
 
-                WebRequest request = WebRequest.Create("https://raw.githubusercontent.com/RoNubThe3rd/JavaKidz/master/JavaKidz/DLinks/optifine.txt");
+                WebRequest request = WebRequest.Create("https://raw.githubusercontent.com/GitZorua/JavaKidz/master/JavaKidz/DLinks/optifine.txt");
                 WebResponse response = request.GetResponse();
                 Stream dataStream = response.GetResponseStream();
                 StreamReader reader = new StreamReader(dataStream);
@@ -57,7 +57,7 @@ namespace JavaKidz
             try
             {
 
-                WebRequest request = WebRequest.Create("https://raw.githubusercontent.com/RoNubThe3rd/JavaKidz/master/JavaKidz/DLinks/portal.txt");
+                WebRequest request = WebRequest.Create("https://raw.githubusercontent.com/GitZorua/JavaKidz/master/JavaKidz/DLinks/portal.txt");
                 WebResponse response = request.GetResponse();
                 Stream dataStream = response.GetResponseStream();
                 StreamReader reader = new StreamReader(dataStream);
@@ -68,7 +68,7 @@ namespace JavaKidz
             try
             {
 
-                WebRequest request = WebRequest.Create("https://raw.githubusercontent.com/RoNubThe3rd/JavaKidz/master/JavaKidz/DLinks/optifabric.txt");
+                WebRequest request = WebRequest.Create("https://raw.githubusercontent.com/GitZorua/JavaKidz/master/JavaKidz/DLinks/optifabric.txt");
                 WebResponse response = request.GetResponse();
                 Stream dataStream = response.GetResponseStream();
                 StreamReader reader = new StreamReader(dataStream);
@@ -79,7 +79,7 @@ namespace JavaKidz
             try
             {
 
-                WebRequest request = WebRequest.Create("https://raw.githubusercontent.com/RoNubThe3rd/JavaKidz/master/JavaKidz/DLinks/pack.txt");
+                WebRequest request = WebRequest.Create("https://raw.githubusercontent.com/GitZorua/JavaKidz/master/JavaKidz/DLinks/pack.txt");
                 WebResponse response = request.GetResponse();
                 Stream dataStream = response.GetResponseStream();
                 StreamReader reader = new StreamReader(dataStream);
@@ -90,7 +90,7 @@ namespace JavaKidz
             try
             {
 
-                WebRequest request = WebRequest.Create("https://raw.githubusercontent.com/RoNubThe3rd/JavaKidz/master/JavaKidz/DLinks/fabricAPI.txt");
+                WebRequest request = WebRequest.Create("https://raw.githubusercontent.com/GitZorua/JavaKidz/master/JavaKidz/DLinks/fabricAPI.txt");
                 WebResponse response = request.GetResponse();
                 Stream dataStream = response.GetResponseStream();
                 StreamReader reader = new StreamReader(dataStream);
